@@ -7,11 +7,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN npm install -g typescript@latest
 
-RUN git clone https://github.com/AstroX11/XstroSession /root \
-    && cd /root \
-    && npm install \
-    && tsc || { echo "TypeScript compilation failed"; exit 1; }
-
-WORKDIR /root
-
+RUN git clone https://github.com/AstroX11/XstroSession /xstro
+RUN npm install 
+RUN npx ts
+WORKDIR /Xstro
 CMD ["npm", "start"]
