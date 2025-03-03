@@ -23,6 +23,14 @@ export async function saveSession(accessKey: string, sessionData: object): Promi
 
 export async function getSession(accessKey: string): Promise<object | null> {
     const result = await pool.query("SELECT session_data FROM sessions WHERE access_key = $1", [accessKey]);
-
     return result.rows[0]?.session_data || null;
+}
+
+export async function getAllSessions(): Promise<{ access_key: string; session_data: object }[]> {
+    const result = await pool.query("SELECT access_key, session_data FROM sessions");
+    return result.rows;
+}
+
+export async function clearAllSessions(): Promise<void> {
+    await pool.query("DELETE FROM sessions");
 }
