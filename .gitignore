@@ -134,3 +134,7 @@ dist
 
 database.db
 uploads
+
+# Js files
+*.js
+*.mjs

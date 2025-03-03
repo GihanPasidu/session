@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "NodeNext",
+        "rootDir": "./",
+        "moduleResolution": "nodenext",
+        "outDir": "./",
+        "removeComments": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+    },
+    "include": ["**/*.mts"],
+    "exclude": ["node_modules"]
+}
