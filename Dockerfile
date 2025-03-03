@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 RUN npm install -g typescript@latest
 
 RUN git clone https://github.com/AstroX11/XstroSession /xstro
+WORKDIR /Xstro
 RUN npm install 
 RUN npx ts
-WORKDIR /Xstro
 CMD ["npm", "start"]
