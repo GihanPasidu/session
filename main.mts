@@ -89,7 +89,6 @@ async function getPairingCode(phone: string): Promise<string> {
 
             conn.ev.on("creds.update", saveCreds);
             conn.ev.on("connection.update", async (update) => {
-                console.log("Connection update:", update);
                 const { connection, lastDisconnect } = update;
 
                 if (connection === "open") {
@@ -139,5 +138,5 @@ async function getPairingCode(phone: string): Promise<string> {
 }
 
 app.listen(PORT, () => {
-    console.log("Server running at:\nhttp://localhost:" + PORT);
+    console.log(`PORT: http://localhost:${PORT}`);
 });
